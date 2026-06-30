@@ -47,4 +47,9 @@ jobs:
             dotnet restore
           dotnet build Proyecto1Seminario2Grupo13.csproj --configuration Release
           dotnet test ProyectoSeminario2.Tests.csproj --no-build
+          dotnet test ProyectoSeminario2.Tests.csproj `
+            --configuration Release `
+            --logger "trx" `
+            --collect:"XPlat Code Coverage" `
+            --results-directory TestResults
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
