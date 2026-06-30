@@ -1,4 +1,5 @@
-﻿using System;
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ProyectoSeminario2.Tests")]
+using System;
 using System.Collections.Generic;
 using System.IO;
 
