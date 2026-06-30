@@ -1,7 +1,8 @@
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ProyectoSeminario2.Tests")]
 using System;
 using System.Collections.Generic;
 using System.IO;
+
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ProyectoSeminario2.Tests")]
 
 namespace Proyecto1Seminario2Grupo13
 {
