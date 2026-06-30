@@ -45,9 +45,9 @@ jobs:
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"AbySkz_ProyectoSeminario2" /o:"abyskz" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
           dotnet build
             dotnet restore
-          dotnet build Proyecto1Seminario2Grupo13.csproj --configuration Release
-          dotnet test ProyectoSeminario2.Tests.csproj --no-build
-          dotnet test ProyectoSeminario2.Tests.csproj `
+          dotnet build Proyecto1Seminario2Grupo13.sln --configuration Release
+          dotnet test ProyectoSeminario2.Tests.sln --no-build
+          dotnet test ProyectoSeminario2.Tests.sln `
             --configuration Release `
             --logger "trx" `
             --collect:"XPlat Code Coverage" `
