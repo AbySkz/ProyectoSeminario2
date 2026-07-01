@@ -43,13 +43,18 @@ jobs:
         shell: powershell
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"AbySkz_ProyectoSeminario2" /o:"abyskz" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          dotnet build
-            dotnet restore
+        
+          dotnet restore
+        
           dotnet build Proyecto1Seminario2Grupo13.sln --configuration Release
-          dotnet test ProyectoSeminario2.Tests.sln --no-build
-          dotnet test ProyectoSeminario2.Tests.sln `
+        
+          echo "=== INICIANDO TESTS ==="
+        
+          dotnet test ProyectoSeminario2.Tests.csproj `
             --configuration Release `
-            --logger "trx" `
-            --collect:"XPlat Code Coverage" `
-            --results-directory TestResults
+            --no-build `
+            --logger "console;verbosity=normal"
+        
+          echo "=== TESTS FINALIZADOS ==="
+        
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
