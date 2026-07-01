@@ -52,7 +52,7 @@ jobs:
         
           dotnet test ProyectoSeminario2.Tests/ProyectoSeminario2.Tests.csproj `
             --configuration Release `
-            --logger "console;verbosity=normal"
+            --logger "trx" `
             --collect:"XPlat Code Coverage"
         
           echo "=== TESTS FINALIZADOS ==="
