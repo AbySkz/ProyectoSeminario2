@@ -52,7 +52,6 @@ jobs:
         
           dotnet test ProyectoSeminario2.Tests/ProyectoSeminario2.Tests.csproj `
             --configuration Release `
-            --no-build `
             --logger "console;verbosity=normal"
         
           echo "=== TESTS FINALIZADOS ==="
