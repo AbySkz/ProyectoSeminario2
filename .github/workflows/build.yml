@@ -42,7 +42,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"AbySkz_ProyectoSeminario2" /o:"abyskz" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin `/k:"AbySkz_ProyectoSeminario2" `/o:"abyskz" `/d:sonar.token="${{ secrets.SONAR_TOKEN }}" `/d:sonar.cs.vstest.reportsPaths="**/*.trx" `/d:sonar.cs.opencover.reportsPaths="**/coverage.cobertura.xml"
         
           dotnet restore
         
@@ -53,6 +53,7 @@ jobs:
           dotnet test ProyectoSeminario2.Tests/ProyectoSeminario2.Tests.csproj `
             --configuration Release `
             --logger "console;verbosity=normal"
+            --collect:"XPlat Code Coverage"
         
           echo "=== TESTS FINALIZADOS ==="
         
