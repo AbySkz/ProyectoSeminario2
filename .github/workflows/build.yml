@@ -50,7 +50,7 @@ jobs:
         
           echo "=== INICIANDO TESTS ==="
         
-          dotnet test ProyectoSeminario2.Tests.csproj `
+          dotnet test ProyectoSeminario2.Tests/ProyectoSeminario2.Tests.csproj `
             --configuration Release `
             --no-build `
             --logger "console;verbosity=normal"
